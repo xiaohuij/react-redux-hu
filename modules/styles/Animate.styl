@@ -1,0 +1,114 @@
+$first-layer-default-animation-delay = 2s;
+$second-layer-default-animation-delay = 7s;
+$third-layer-default-animation-delay = 5s;
+
+animate(animationName) {
+  animation-name: animationName;
+  transform-origin: center bottom;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes first-layer-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3%, 0);
+    transform: translate3d(0, 3%, 0);
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes second-layer-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(0, 4%);
+    transform: translate(0, 4%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes third-layer-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(-50%, 30%);
+    transform: translate(-50%, 30%);
+  }
+  30% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes floating-arrow {
+  from { transform: translate(0, 60%);}
+  40% { transform: translate(0, 80%);}
+  to { transform: translate(0, 60%);}
+}
+
+@keyframes custom-intro-home-second-layer-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(-50%, 20%);
+    transform: translate(-50%, 20%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes custom-intro-how-third-layer-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(0, 30%);
+    transform: translate(0, 30%);
+  }
+  30% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.-first-layer-animation {
+  -webkit-animation-name: first-layer-animation;
+  animation-name: first-layer-animation;
+  animation-fill-mode: forwards;
+  animation-duration: $first-layer-default-animation-delay;
+}
+
+.-second-layer-animation {
+  -webkit-animation-name: second-layer-animation;
+  animation-name: second-layer-animation;
+  animation-fill-mode: forwards;
+  animation-duration: $second-layer-default-animation-delay;
+}
+
+.-third-layer-animation {
+  -webkit-animation-name: third-layer-animation;
+  animation-name: third-layer-animation;
+  animation-fill-mode: forwards;
+  animation-duration: $third-layer-default-animation-delay;
+}
+
+.-third-layer-animation-intro-home {
+  -webkit-animation-name: custom-intro-home-second-layer-animation;
+  animation-name: custom-intro-home-second-layer-animation;
+  animation-fill-mode: forwards;
+  animation-duration: $second-layer-default-animation-delay;
+}
+
+.-third-layer-animation-intro-how {
+  -webkit-animation-name: custom-intro-how-third-layer-animation;
+  animation-name: custom-intro-how-third-layer-animation;
+  animation-fill-mode: forwards;
+  animation-duration: $third-layer-default-animation-delay;
+}

@@ -1,0 +1,20 @@
+#%RAML 0.8
+---
+title: React Redux Hu
+baseUri: /api
+
+resourceTypes:
+  - collection: !include resource_types/collection.raml
+  - collection_item: !include resource_types/collection_item.raml
+
+/kongfu:
+  type:
+    collection:
+      example_collection: !include example/kongfu.json
+  get:
+      description: get kongfu list
+      queryParameters:
+        kongfuId:
+          description: kongfu id
+          required: true
+          type: string
